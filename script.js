@@ -135,7 +135,7 @@ const DEFAULT_PROJECTS = [
     category: 'video',
     tag: '.MP4',
     desc: 'A high-tech, futuristic style featuring a glowing digital crossword grid and neon blue cyber block effects. Best for tech events, puzzle competitions, or modern academic projects.',
-    thumb: 'videos/Video 1.mp4',
+    thumb: 'videos/pomotype/Video 1.mp4',
     videoUrl: '',
     createdAt: Date.now() - 7000
   },
@@ -145,7 +145,7 @@ const DEFAULT_PROJECTS = [
     category: 'video',
     tag: '.MP4',
     desc: 'A warm, traditional aesthetic using rising golden fire sparkles and glowing ember effects behind elegant text. Best for cultural festivals, heritage celebrations, and traditional ceremonies.',
-    thumb: 'videos/Video 2.mp4',
+    thumb: 'videos/pomotype/Video 2.mp4',
     videoUrl: '',
     createdAt: Date.now() - 6000
   },
@@ -155,7 +155,7 @@ const DEFAULT_PROJECTS = [
     category: 'video',
     tag: '.MP4',
     desc: 'An elegant and serious style featuring slanted 3D typography illuminated by a dramatic spotlight fade. Best for prestigious society events, mastery competitions, and formal promotions.',
-    thumb: 'videos/Video 3.mp4',
+    thumb: 'videos/pomotype/Video 3.mp4',
     videoUrl: '',
     createdAt: Date.now() - 5000
   },
@@ -165,7 +165,7 @@ const DEFAULT_PROJECTS = [
     category: 'video',
     tag: '.MP4',
     desc: 'A high-impact title reveal showcasing a glowing green neon crack and shattered energy effect. Best for script-writing competitions, dramatic reveals, and intense event trailers.',
-    thumb: 'videos/Video 4.mp4',
+    thumb: 'videos/pomotype/Video 4.mp4',
     videoUrl: '',
     createdAt: Date.now() - 4000
   },
@@ -175,7 +175,7 @@ const DEFAULT_PROJECTS = [
     category: 'video',
     tag: '.MP4',
     desc: 'A dark and dramatic style using cinematic gold metallic text combined with a dark grunge shadow effect. Best for short film festivals, premium event teasers, and signature competitions.',
-    thumb: 'videos/Video 5.mp4',
+    thumb: 'videos/pomotype/Video 5.mp4',
     videoUrl: '',
     createdAt: Date.now() - 3500
   },
@@ -185,7 +185,7 @@ const DEFAULT_PROJECTS = [
     category: 'video',
     tag: '.MP4',
     desc: 'A bright, modern look utilizing a clean white background with subtle abstract light gradients and smooth line effects. Best for guest speaker announcements, judge reveals, and professional social media posts.',
-    thumb: 'videos/Video 6.mp4',
+    thumb: 'videos/pomotype/Video 6.mp4',
     videoUrl: '',
     createdAt: Date.now() - 2500
   },
@@ -195,7 +195,7 @@ const DEFAULT_PROJECTS = [
     category: 'video',
     tag: '.MP4',
     desc: 'An immersive, movie-like teaser featuring a bold center lens flare and warm fire sparks overlay to build excitement. Best for live musical performances, orchestra returns, and grand event announcements.',
-    thumb: 'videos/Video 7.mp4',
+    thumb: 'videos/pomotype/Video 7.mp4',
     videoUrl: '',
     createdAt: Date.now() - 1500
   }
