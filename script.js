@@ -15,6 +15,7 @@ function showToast(msg){
 }
 function openModal(id){ document.getElementById(id).classList.add('open'); }
 function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+function isVideoFile(path){ return /\.(mp4|webm|mov|m4v)$/i.test(path||''); }
 document.querySelectorAll('[data-close]').forEach(btn=>{
   btn.addEventListener('click', ()=>closeModal(btn.dataset.close));
 });
@@ -127,6 +128,76 @@ const DEFAULT_PROJECTS = [
     thumb: 'Images/business card/PRO 3.png',
     videoUrl: '',
     createdAt: Date.now() - 1000
+  },
+  {
+    id: 'video-1',
+    title: 'Digital & Cyber Theme — Crossword Reveal',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'A high-tech, futuristic style featuring a glowing digital crossword grid and neon blue cyber block effects. Best for tech events, puzzle competitions, or modern academic projects.',
+    thumb: 'videos/Video 1.mp4',
+    videoUrl: '',
+    createdAt: Date.now() - 7000
+  },
+  {
+    id: 'video-2',
+    title: 'Cultural & Traditional Theme — Kalaimagal Vizha',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'A warm, traditional aesthetic using rising golden fire sparkles and glowing ember effects behind elegant text. Best for cultural festivals, heritage celebrations, and traditional ceremonies.',
+    thumb: 'videos/Video 2.mp4',
+    videoUrl: '',
+    createdAt: Date.now() - 6000
+  },
+  {
+    id: 'video-3',
+    title: 'Dramatic Spotlight Theme — Music Society',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'An elegant and serious style featuring slanted 3D typography illuminated by a dramatic spotlight fade. Best for prestigious society events, mastery competitions, and formal promotions.',
+    thumb: 'videos/Video 3.mp4',
+    videoUrl: '',
+    createdAt: Date.now() - 5000
+  },
+  {
+    id: 'video-4',
+    title: 'Intense Energy Theme — Vimbam 2025',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'A high-impact title reveal showcasing a glowing green neon crack and shattered energy effect. Best for script-writing competitions, dramatic reveals, and intense event trailers.',
+    thumb: 'videos/Video 4.mp4',
+    videoUrl: '',
+    createdAt: Date.now() - 4000
+  },
+  {
+    id: 'video-5',
+    title: 'Premium Movie Trailer Theme — Short Film Competition',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'A dark and dramatic style using cinematic gold metallic text combined with a dark grunge shadow effect. Best for short film festivals, premium event teasers, and signature competitions.',
+    thumb: 'videos/Video 5.mp4',
+    videoUrl: '',
+    createdAt: Date.now() - 3500
+  },
+  {
+    id: 'video-6',
+    title: 'Clean & Minimalist Theme — Judge Reveal',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'A bright, modern look utilizing a clean white background with subtle abstract light gradients and smooth line effects. Best for guest speaker announcements, judge reveals, and professional social media posts.',
+    thumb: 'videos/Video 6.mp4',
+    videoUrl: '',
+    createdAt: Date.now() - 2500
+  },
+  {
+    id: 'video-7',
+    title: 'Cinematic Concert Theme — Karnatic Orchestra',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'An immersive, movie-like teaser featuring a bold center lens flare and warm fire sparks overlay to build excitement. Best for live musical performances, orchestra returns, and grand event announcements.',
+    thumb: 'videos/Video 7.mp4',
+    videoUrl: '',
+    createdAt: Date.now() - 1500
   }
 ];
 
@@ -167,7 +238,9 @@ function renderPortfolio(){
     card.className = 'project-card';
     card.innerHTML = `
       <div class="thumb-frame">
-        ${p.thumb ? `<img src="${p.thumb}" alt="${escapeHtml(p.title)}">` : ''}
+        ${p.thumb ? (isVideoFile(p.thumb)
+          ? `<video src="${p.thumb}" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"></video>`
+          : `<img src="${p.thumb}" alt="${escapeHtml(p.title)}">`) : ''}
         <div class="badge">${p.tag || TAGS[p.category] || ''}</div>
         <div class="play-overlay">
           <svg width="46" height="46" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="22" stroke="#00ABB1" stroke-width="1.5"/><path d="M19 15L31 23L19 31V15Z" fill="#00ABB1"/></svg>
@@ -233,7 +306,9 @@ function openProjectView(p){
   document.getElementById('pvTitle').textContent = p.title;
   document.getElementById('pvDesc').textContent = p.desc||'';
   const media = document.getElementById('pvMedia');
-  media.innerHTML = p.thumb ? `<img src="${p.thumb}">` : '';
+  media.innerHTML = p.thumb ? (isVideoFile(p.thumb)
+    ? `<video src="${p.thumb}" controls playsinline style="width:100%;border-radius:8px;"></video>`
+    : `<img src="${p.thumb}">`) : '';
   const linkWrap = document.getElementById('pvLinkWrap');
   linkWrap.innerHTML = p.videoUrl ? `<a href="${p.videoUrl}" target="_blank" rel="noopener" class="btn btn-outline">Watch / Open Link</a>` : '';
   openModal('projectViewModal');
