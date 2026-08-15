@@ -100,30 +100,30 @@ const STORAGE_KEY = 'primerenders_projects';
 const DEFAULT_PROJECTS = [
   {
     id: 'business-card-1',
-    title: 'Business Card Design 1',
+    title: 'Modern Minimal Business Card Design',
     category: 'graphic',
     tag: '.PNG',
-    desc: 'Clean, print-ready business card design tailored to a client\'s brand — CMYK, 300 DPI, with editable source files included.',
+    desc: 'Clean, modern design with warm earth-tone colors for a professional, approachable brand identity. Organized for easy readability, includes a QR code for quick access to business info, and is fully print-ready — great for startups, freelancers, and small businesses.',
     thumb: 'Images/business card/PRO 1.png',
     videoUrl: '',
     createdAt: Date.now() - 3000
   },
   {
     id: 'business-card-2',
-    title: 'Business Card Design 2',
+    title: 'Premium Corporate Business Card',
     category: 'graphic',
     tag: '.PNG',
-    desc: 'Modern double-sided business card layout with QR code integration and a strong visual identity.',
+    desc: 'A premium black and gold business card built for a modern corporate brand — elegant, readable, and luxurious while staying clean and professional. Double-sided design with QR code integration and print-ready formatting, made for businesses that want to leave a lasting first impression.',
     thumb: 'Images/business card/PRO 2.png',
     videoUrl: '',
     createdAt: Date.now() - 2000
   },
   {
     id: 'business-card-3',
-    title: 'Business Card Design 3',
+    title: 'Purple Business Card',
     category: 'graphic',
     tag: '.PNG',
-    desc: 'Minimalist, high-contrast card design built for fast recognition and a professional first impression.',
+    desc: 'A modern business card with vibrant purple gradients and a clean, minimalist layout — designed for a fresh, professional look with excellent readability. Fully print-ready and ideal for creative agencies, tech companies, and personal brands wanting a modern visual identity.',
     thumb: 'Images/business card/PRO 3.png',
     videoUrl: '',
     createdAt: Date.now() - 1000
