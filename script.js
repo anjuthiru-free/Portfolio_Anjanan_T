@@ -97,7 +97,38 @@ const STORAGE_KEY = 'primerenders_projects';
 
 // Optional starter projects, always shown to every visitor.
 // Edit this array directly in script.js to permanently add work samples.
-const DEFAULT_PROJECTS = [];
+const DEFAULT_PROJECTS = [
+  {
+    id: 'business-card-1',
+    title: 'Business Card Design 1',
+    category: 'graphic',
+    tag: '.PNG',
+    desc: 'Clean, print-ready business card design tailored to a client\'s brand — CMYK, 300 DPI, with editable source files included.',
+    thumb: 'Images/business card/PRO 1.png',
+    videoUrl: '',
+    createdAt: Date.now() - 3000
+  },
+  {
+    id: 'business-card-2',
+    title: 'Business Card Design 2',
+    category: 'graphic',
+    tag: '.PNG',
+    desc: 'Modern double-sided business card layout with QR code integration and a strong visual identity.',
+    thumb: 'Images/business card/PRO 2.png',
+    videoUrl: '',
+    createdAt: Date.now() - 2000
+  },
+  {
+    id: 'business-card-3',
+    title: 'Business Card Design 3',
+    category: 'graphic',
+    tag: '.PNG',
+    desc: 'Minimalist, high-contrast card design built for fast recognition and a professional first impression.',
+    thumb: 'Images/business card/PRO 3.png',
+    videoUrl: '',
+    createdAt: Date.now() - 1000
+  }
+];
 
 async function loadProjects(){
   try{
