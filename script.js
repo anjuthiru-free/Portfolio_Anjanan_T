@@ -269,6 +269,13 @@ function renderPortfolio(){
       });
     }
     grid.appendChild(card);
+    const previewVideo = card.querySelector('.thumb-frame video');
+    if(previewVideo){
+      previewVideo.muted = true;
+      const tryPlay = () => previewVideo.play().catch(()=>{ /* browser blocked it; ignore */ });
+      if(previewVideo.readyState >= 2) tryPlay();
+      else previewVideo.addEventListener('loadeddata', tryPlay, { once: true });
+    }
   });
 
   if(adminMode){
@@ -307,8 +314,13 @@ function openProjectView(p){
   document.getElementById('pvDesc').textContent = p.desc||'';
   const media = document.getElementById('pvMedia');
   media.innerHTML = p.thumb ? (isVideoFile(p.thumb)
-    ? `<video src="${p.thumb}" autoplay controls playsinline style="width:100%;border-radius:8px;"></video>`
+    ? `<video src="${p.thumb}" controls playsinline style="width:100%;border-radius:8px;"></video>`
     : `<img src="${p.thumb}">`) : '';
+  const modalVideo = media.querySelector('video');
+  if(modalVideo){
+    modalVideo.muted = false;
+    modalVideo.play().catch(()=>{ /* if blocked, the user can press play manually */ });
+  }
   const linkWrap = document.getElementById('pvLinkWrap');
   linkWrap.innerHTML = p.videoUrl ? `<a href="${p.videoUrl}" target="_blank" rel="noopener" class="btn btn-outline">Watch / Open Link</a>` : '';
   openModal('projectViewModal');
