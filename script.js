@@ -239,7 +239,7 @@ function renderPortfolio(){
     card.innerHTML = `
       <div class="thumb-frame">
         ${p.thumb ? (isVideoFile(p.thumb)
-          ? `<video src="${p.thumb}" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"></video>`
+          ? `<video src="${p.thumb}" autoplay muted loop playsinline preload="auto"></video>`
           : `<img src="${p.thumb}" alt="${escapeHtml(p.title)}">`) : ''}
         <div class="badge">${p.tag || TAGS[p.category] || ''}</div>
         <div class="play-overlay">
@@ -307,7 +307,7 @@ function openProjectView(p){
   document.getElementById('pvDesc').textContent = p.desc||'';
   const media = document.getElementById('pvMedia');
   media.innerHTML = p.thumb ? (isVideoFile(p.thumb)
-    ? `<video src="${p.thumb}" controls playsinline style="width:100%;border-radius:8px;"></video>`
+    ? `<video src="${p.thumb}" autoplay controls playsinline style="width:100%;border-radius:8px;"></video>`
     : `<img src="${p.thumb}">`) : '';
   const linkWrap = document.getElementById('pvLinkWrap');
   linkWrap.innerHTML = p.videoUrl ? `<a href="${p.videoUrl}" target="_blank" rel="noopener" class="btn btn-outline">Watch / Open Link</a>` : '';
