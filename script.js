@@ -198,6 +198,28 @@ const DEFAULT_PROJECTS = [
     thumb: 'videos/pomotype/Video 7.mp4',
     videoUrl: '',
     createdAt: Date.now() - 1500
+  },
+  {
+    id: 'video-8',
+    title: 'Motion Graphic — Starbucks Edit',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'A vertical motion graphics edit built for social media, with smooth transitions and clean pacing designed for portrait viewing.',
+    thumb: 'videos/pomotype/Vertical Edits/cuts subs and transision edits/motion graphics/Motion graphic Starbucks Edit.mp4',
+    videoUrl: '',
+    orientation: 'portrait',
+    createdAt: Date.now() - 900
+  },
+  {
+    id: 'video-9',
+    title: 'Typography Edit — Apple\'s First Product',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'A vertical typography-driven edit with tight cuts and transitions, formatted for portrait-first platforms like Reels and Shorts.',
+    thumb: 'videos/pomotype/Vertical Edits/cuts subs and transision edits/motion graphics/Typography Edit _ Apples First Product.mp4',
+    videoUrl: '',
+    orientation: 'portrait',
+    createdAt: Date.now() - 800
   }
 ];
 
@@ -237,7 +259,7 @@ function renderPortfolio(){
     const card = document.createElement('div');
     card.className = 'project-card';
     card.innerHTML = `
-      <div class="thumb-frame">
+      <div class="thumb-frame${p.orientation === 'portrait' ? ' thumb-frame--portrait' : ''}">
         ${p.thumb ? (isVideoFile(p.thumb)
           ? `<video src="${p.thumb}" autoplay muted loop playsinline preload="auto"></video>`
           : `<img src="${p.thumb}" alt="${escapeHtml(p.title)}">`) : ''}
@@ -313,6 +335,7 @@ function openProjectView(p){
   document.getElementById('pvTitle').textContent = p.title;
   document.getElementById('pvDesc').textContent = p.desc||'';
   const media = document.getElementById('pvMedia');
+  media.classList.toggle('pv-portrait', p.orientation === 'portrait');
   media.innerHTML = p.thumb ? (isVideoFile(p.thumb)
     ? `<video src="${p.thumb}" controls playsinline style="width:100%;border-radius:8px;"></video>`
     : `<img src="${p.thumb}">`) : '';
