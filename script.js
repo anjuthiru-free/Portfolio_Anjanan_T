@@ -220,6 +220,17 @@ const DEFAULT_PROJECTS = [
     videoUrl: '',
     orientation: 'portrait',
     createdAt: Date.now() - 800
+  },
+  {
+    id: 'video-10',
+    title: 'Tom Holland Podcast Edit',
+    category: 'video',
+    tag: '.MP4',
+    desc: 'A vertical podcast clip edit with clean cuts and captions, formatted for portrait-first platforms like Reels and Shorts.',
+    thumb: 'videos/pomotype/Vertical Edits/cuts subs and transision edits/Tom Holland Podcast edit final.mp4',
+    videoUrl: '',
+    orientation: 'portrait',
+    createdAt: Date.now() - 700
   }
 ];
 
