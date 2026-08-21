@@ -174,6 +174,7 @@ nav.scrolled{background:rgba(2,10,15,.86); backdrop-filter:blur(14px); padding:1
 .project-card{position:relative; border:1px solid var(--teal-line); background:var(--panel); overflow:hidden; transition:transform .45s var(--ease), border-color .45s;}
 .project-card:hover{transform:translateY(-6px); border-color:var(--teal);}
 .thumb-frame{position:relative; aspect-ratio:16/10; overflow:hidden; background:linear-gradient(150deg,var(--panel-2),var(--navy));}
+.thumb-frame--portrait{aspect-ratio:9/16;}
 .thumb-frame img, .thumb-frame video{width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease);}
 .project-card:hover .thumb-frame img, .project-card:hover .thumb-frame video{transform:scale(1.06);}
 .badge{position:absolute; top:10px; left:10px; font-family:var(--mono); font-size:10px; letter-spacing:.08em; background:rgba(2,10,15,.75); border:1px solid var(--teal-line); color:var(--teal); padding:4px 8px; z-index:2;}
@@ -291,6 +292,8 @@ footer{border-top:1px solid var(--teal-line); padding:44px 0 90px;}
 .admin-banner button{background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.4); color:#fff; padding:4px 12px; font-family:var(--mono); font-size:10.5px; border-radius:20px;}
 .project-view-media{width:100%; aspect-ratio:16/9; background:var(--void); margin-bottom:18px; border:1px solid var(--teal-line);}
 .project-view-media img{width:100%; height:100%; object-fit:cover;}
+.project-view-media video{width:100%; height:100%; object-fit:contain; background:#000;}
+.project-view-media.pv-portrait{aspect-ratio:9/16; max-width:280px; margin-left:auto; margin-right:auto;}
 .toast{position:fixed; bottom:64px; left:50%; transform:translateX(-50%) translateY(20px); background:var(--panel-2); border:1px solid var(--teal); color:var(--text); font-family:var(--mono); font-size:12.5px; padding:12px 22px; border-radius:2px; opacity:0; pointer-events:none; transition:.4s var(--ease); z-index:500;}
 .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
 
